@@ -1,0 +1,27 @@
+{use_macro file="Dataface_Main_Template.html"}
+	{fill_slot name="html_body"}
+	<div class="login-prompt-wrapper">
+		<div class="forgot-password-form">
+			
+			<h1>Request Password Reset</h1>
+			<div id="forgot-password-body">
+				<div class="portalMessage status-message" {if !$error}style="display:none"{/if}>{if $error}{$error|escape}{/if}</div>
+				<div class="forgot-password-form-fields">
+					<select id="reset-password-by">
+						<option value="email">My Email Address is:</option>
+						<option value="username">My username is:</option>
+					</select>
+					
+					<input type="text" id="email-or-username"/>
+					
+					<input type="button" id="submit-button" value="Submit"/>
+					
+					<p><a href="{$ENV.DATAFACE_SITE_HREF}?-action=login">Login Now</a></p>
+				</div>
+			</div>
+		
+		</div>
+	</div>
+		{block name="after_global_footer"}
+	{/fill_slot}
+{/use_macro}
