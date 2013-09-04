@@ -20,7 +20,7 @@ $time = microtime(true);
 
 require_once '../dataface-public-api.php';
 	// include the initialization file
-df_init(__FILE__, '/xataface');
+df_init(__FILE__, '/new');
 	// initialize the site
 
 $app =& Dataface_Application::getInstance();
@@ -30,5 +30,6 @@ $app->display();
 
 
 $time = microtime(true) - $time;
+echo __FILE__ . "/xataface<br>";
 echo "<p>Execution Time: $time</p>";
 ?>
